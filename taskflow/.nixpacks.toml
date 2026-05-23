@@ -1,0 +1,11 @@
+[phases.setup] 
+nixPkgs = ["nodejs_22"] 
+ 
+[phases.install] 
+cmds = ["npm install", "npm install --prefix client"] 
+ 
+[phases.build] 
+cmds = ["npm run build --prefix client"] 
+ 
+[start] 
+cmd = "node --experimental-sqlite server/index.js" 
