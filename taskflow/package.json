@@ -5,10 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node --experimental-sqlite server/index.js",
-    "dev": "nodemon --exec 'node --experimental-sqlite' server/index.js",
-    "build": "cd client && npm install && npm run build",
-    "install:all": "npm install && cd client && npm install",
-    "postinstall": "cd client && npm install && npm run build"
+    "dev": "node --experimental-sqlite server/index.js",
+    "build": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -18,10 +16,8 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.0"
-  },
   "engines": {
-    "node": ">=22.5.0"
+    "node": ">=22.5.0",
+    "npm": ">=8.0.0"
   }
 }
